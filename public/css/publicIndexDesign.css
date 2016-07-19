@@ -1,0 +1,233 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+/* font-family: 'Lobster', cursive;, cursive;*/
+
+
+/*google font : font-family: 'Oswald', sans-serif;*/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:100);
+
+/*font-family: 'Raleway', sans-serif;*/
+
+.publicNav {}
+
+
+/*----index id featured----*/
+
+.featuredHeading
+/* will be used as the standard for all the headings specific ones can be used targteting ids*/
+
+{
+  border-top: 10px solid #292929;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#featured .featuredContainer {
+  background-color: #e7e5e4;
+}
+
+#featured .featuredCategory {}
+
+#featured .featuredTitle {
+  font-size: 1.5em;
+}
+
+.featuredImg {
+  max-width: 300px;
+      width: 300px !important;
+  height:300px !important;
+  max-height: 300px;
+  margin: auto;
+  padding: 10px;
+}
+
+
+/*--------------------Extras section -----------------------*/
+
+#extrasSection {
+  background: #000;
+}
+
+#extrasSection .extrasHeading {
+  border-top: 10px solid #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#extrasSection .extrasHeading {}
+
+
+/*------------------End Extras Section---------------------*/
+
+
+/*------------------Shows Carousel-------------------------*/
+
+#shows #showsHeader {
+  border-top: 10px solid #292929;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#shows .carousel-control.right,
+.carousel-control.left {
+  background-image: none !important;
+  color: #f4511e !important;
+}
+
+#shows .carousel-indicators li {
+  border-color: #f4511e;
+}
+
+#shows .carousel-indicators li.active {
+  background-color: #f4511e;
+}
+
+#shows .item h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 70px 0;
+}
+
+#shows .item span {
+  font-style: normal;
+}
+
+
+/*------------------End Shows Carousel---------------------*/
+
+
+/*------------------Get involved section------------------*/
+
+#getInvolved {
+  background: url('/myMvc/app/models/images/buffaloBg.jpg');
+}
+
+#getInvolved h2 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#getInvolved h2.lineBehindTitle {
+  position: relative;
+  z-index: 1;
+}
+
+#getInvolved h2.lineBehindTitle:before {
+  border-top: 2px solid red;
+  content: "";
+  margin: 0 auto;
+  /* this centers the line to the full width specified */
+  position: absolute;
+  /* positioning must be absolute here, and relative positioning must be applied to the parent */
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 95%;
+  z-index: -1;
+}
+
+#getInvolved h2.lineBehindTitle span {
+  /* to hide the lines from behind the text, you have to set the background color the same as the container */
+  background: #fff;
+  padding: 0 15px;
+  font-family: 'Lobster', cursive;
+  background-color: yellow;
+}
+
+#getInvolved h1 a {
+  letter-spacing: -4px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  color: #000;
+}
+
+#getInvolved h2 a {
+  color: #2f2a2a;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  text-shadow: 0px 0px 10px #fff;
+}
+
+#getInvolved h3 a {
+  font-family: 'Oswald', sans-serif;
+  background: red;
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/*--------------------END get involved---------------------*/
+
+
+/*------------------Logo design------------------------*/
+
+.navbar-brand {
+  background: red;
+}
+
+#topOfLogo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+#bottomOfLogo {
+  font-family: 'Lobster', cursive;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/*-----------------End Logo Design---------------------*/
+
+
+/*------------------HELPER CSS MODS-------------------*/
+
+.navbar > li > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.navbar,
+.navbar-brand {
+  min-height: 100px !important
+}
+
+.no-space {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.px20TopPadd {
+  padding-top: 20px;
+}
+
+
+/*------------------END HELPER CSS MODS-------------------*/
