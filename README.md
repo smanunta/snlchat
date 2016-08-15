@@ -1,5 +1,7 @@
 #Starting with the “SNLCreator” app 
 
+in the app/init.php file set your own session save location or just deleted
+
 Create Database
 Use the start.sql file in the root of the download folder to create your database, name it whatever you want
 

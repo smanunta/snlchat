@@ -1,0 +1,90 @@
+/*-----------------LEFT Side Menu design ------------------*/
+
+#sideMenuBtn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: #000;
+} 
+
+.sideMenu {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 70px;
+  height: 100%; 
+  background: #3B3B3B;
+  overflow-y: auto;
+  transition: width 0.5s ease;
+  z-index: 1000;
+}
+.sideMenu h1{
+    display:none;
+}
+.sideMenu ul li.menuOption{
+    display:none;
+}
+.sideMenu ul li span
+{
+    font-size: 2em;
+    color: #fff;
+    padding-right: 10px;
+}
+.sideMenu.menuOpen
+{
+  width: 20% !important;
+}
+.sideMenu.menuOpen h1
+{ 
+  font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+    padding: 0;
+    text-shadow: 0px 3px 1px #000;
+  display:inline-block;
+}
+.sideMenu.menuOpen ul li.menuOption{
+    display:block;
+}
+
+#openCloseSideMenuBtn {
+  float: right;
+  font-size: 2em;
+  color: #fff;
+  margin-top: 10px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+/*#sideMenu:target {
+  width: 20%;
+}*/
+
+#sideMenu:target + #wrapper {
+  width: 80%;
+  /*float:left;**/
+  overflow: hidden;
+}
+
+#wrapper {
+  transition: all 0.5s ease;
+}
+
+.sideNavLink {
+      cursor: pointer;
+  
+  transition: all 0.3s ease;
+}
+
+.helperLink{
+    cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+
+/*-----------------End side menu----------------------*/

@@ -1,0 +1,40 @@
+{
+  "THEME":{
+    "name": "longDays",
+    "description" : "this JSON file includes the description for loading the contents for this THEME",
+    "created_by": "Jose Sebastian Manunta",
+    "creation_day": "3-10-16"
+  }, 
+  "INDEX_STRUCTURE": 
+    [
+    {
+      "file": "workspaceViews/themes/longDays/header",
+      "model_needed": ""
+    },
+    {
+      "file" : "workspaceViews/themes/viewModules/leftSideMenu",
+      "model_needed": ""
+    }, 
+      {
+      "file" : "workspaceViews/themes/longDays/index",
+      "model_needed": "pubModels/PubFeatured"
+      },
+    {
+       "file": "workspaceViews/themes/longDays/footer",
+      "model_needed": ""
+      }
+    
+   
+  ],
+  "PAGES_STRUCTURE": {
+    
+    "header_file": "header",
+    "mod1" : "viewModules/featured",
+    "mod2" : "viewModules/featuredArticles",
+    
+    "footer_file": "footer"
+  },
+  "MODELS_NEEDED":{
+    "pubModels" : "PubFeatured"
+  }
+}

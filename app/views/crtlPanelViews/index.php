@@ -9,8 +9,8 @@ $appName = LoadOptions::searchResultsForSpecificOption("appName");
 <html>
 <head>
 	<title>Ticket Handler</title>
-	<link rel="stylesheet" href="/myMvc/public/css/design.css">
-		<link rel="stylesheet" href="/myMvc/public/css/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/snlchat/public/css/design.css">
+		<link rel="stylesheet" href="/snlchat/public/css/bootstrap-3.3.5-dist/css/bootstrap.min.css">
 	
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <meta charset="utf-8">

@@ -1,0 +1,36 @@
+{
+  "THEME":{
+    "name": "NovaDays",
+    "description" : "this JSON file includes the description for loading the contents for this THEME",
+    "created_by": "Jose Sebastian Manunta",
+    "creation_day": "8-9-16"
+  }, 
+  "INDEX_STRUCTURE": 
+    [
+     {
+      "file" : "workspaceViews/themes/NovaDays/header",
+      "model_needed": ""
+      },
+      {
+      "file" : "workspaceViews/themes/NovaDays/index",
+      "model_needed": "pubModels/PubFeatured"
+      },
+    {
+       "file": "workspaceViews/themes/NovaDays/footer",
+      "model_needed": ""
+      }
+    
+   
+  ],
+  "PAGES_STRUCTURE": {
+    
+    "header_file": "header",
+    "mod1" : "viewModules/featured",
+    "mod2" : "viewModules/featuredArticles",
+    
+    "footer_file": "footer"
+  },
+  "MODELS_NEEDED":{
+    "pubModels" : "PubFeatured"
+  }
+}

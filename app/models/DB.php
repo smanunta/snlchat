@@ -109,6 +109,7 @@
 				}
 				$sql = "INSERT INTO {$table} (`".implode('`,`', $keys)."`) VALUES ({$values})";
 				//echo $sql;
+                //var_dump($data);
 				if(!$this->query($sql, $data)->error())
 				{
 					return true;

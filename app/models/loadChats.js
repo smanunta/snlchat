@@ -157,6 +157,7 @@ var createChatEnviornment = {
         console.log($chatLines);
         //foreach line print and append to #chatText
         $chatLines.forEach(function($line) {
+            console.log($line.msg_id);
           if($line.user_id == wsData.userData.user_id)
             {
              console.log("usrnames match");

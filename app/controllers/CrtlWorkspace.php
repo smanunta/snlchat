@@ -142,6 +142,7 @@ class CrtlWorkspace extends Controller
 	public function dataInJsonFormatForJs()
 	{
 		self::$_WorkspaceData['userData']->salt = utf8_encode(self::$_WorkspaceData['userData']->salt);
+        //var_dump(self::$_WorkspaceData);
 		$json  = json_encode(self::$_WorkspaceData); //json_encode(self::$_WorkspaceData);
 		
 /*  ERROR CHECKING IF JSON DOES NOT WORK 
@@ -206,10 +207,8 @@ if ($error = json_last_error_msg()) {
 	{
 		if(Input::exists())
 		{
-			$rightNow = date("Y-m-d H:i:sa");
 			//echo"post set test";
 			$data['chat_id'] = $_POST['chatId'];
-			$data['timestamp'] =$rightNow;
 			$data['msg'] = $_POST['msg'];
 			$data['user_id'] = $_POST['user_id'];
 			

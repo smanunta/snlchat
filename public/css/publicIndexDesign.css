@@ -111,7 +111,7 @@
 /*------------------Get involved section------------------*/
 
 #getInvolved {
-  background: url('/myMvc/app/models/images/buffaloBg.jpg');
+  background: url('/snlchat/app/models/images/buffaloBg.jpg');
 }
 
 #getInvolved h2 {
@@ -206,6 +206,51 @@
 
 
 /*-----------------End Logo Design---------------------*/
+
+
+/*-----------------Side Menu design ------------------*/
+
+#sideMenuBtn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: #000;
+}
+
+.sideMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #3B3B3B;
+  overflow-y: auto;
+  transition: width 0.5s ease;
+}
+
+#closeSideMenuBtn {
+  float: right;
+  font-size: 2em;
+  color: #fff;
+  margin-top: 10px;
+  transition: all 0.1s ease;
+}
+
+#sideMenu:target {
+  width: 20%;
+}
+
+#sideMenu:target + #wrapper {
+  width: 80%;
+  /*float:left;**/
+  overflow: hidden;
+}
+
+#wrapper {
+  transition: all 0.5s ease;
+}
+
+/*-----------------End side menu----------------------*/
 
 
 /*------------------HELPER CSS MODS-------------------*/

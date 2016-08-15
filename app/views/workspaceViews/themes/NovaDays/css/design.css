@@ -1,0 +1,11 @@
+#menuToogleBtnArea
+{
+    position: fixed;
+    bottom:10px;
+    left:10px;
+}
+#menuToogleBtn
+{
+    border-radius: 15px;
+    font-size: 25px;
+}

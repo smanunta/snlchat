@@ -1,5 +1,5 @@
 <?php
-session_save_path("/home/users/web/b966/ipg.josesebastianmanunta/cgi-bin/tmp");
+//session_save_path("/home/users/web/b966/ipg.josesebastianmanunta/cgi-bin/tmp");
 session_start();
 
 require_once 'core/App.php';  //includes the App class
@@ -7,10 +7,10 @@ require_once 'core/Controller.php'; //includses the Controller class
 
 $GLOBALS['config']= array (
 	'mysql' => array(
-		'host' => 'ADD YOUR OWN HOST',
-		'username' => 'ADD YOUR DB USERNAME',
-		'password' => 'ADD YOUR DB PASSWORD',
-		'db' => 'ADD YOUR DB NAME'
+		'host' => 'localhost',
+		'username' => 'root',
+		'password' => '',
+		'db' => 'snlchat1'
 	),
 	'remember' => array(
 		'cookie_name' => 'hash',

@@ -1,19 +1,45 @@
 window.addEventListener('load', function() {
-  $("#openCloseSideMenuBtn").click(function() {
-    if($(".sideMenu").hasClass("closed"))
-      {
-        $(".sideMenu").toggleClass("menuOpen");
-        $(".sideMenu").removeClass("closed").addClass("opened");
-        $("#openCloseSideMenuBtn span").removeClass("glyphicon-menu-right").addClass("glyphicon-menu-left");
-      }
-    else
-        {
-          $(".sideMenu").toggleClass("menuOpen");
-          $(".sideMenu").removeClass("opened").addClass(" closed");
-          $("#openCloseSideMenuBtn span").removeClass("glyphicon-menu-left").addClass("glyphicon-menu-right");
-        }
+  $("#sideMenuBtn").click(function() {
+    $(this).hide();
   });
-  
-  
- 
+  $("#closeSideMenuBtn").click(function() {
+    $("#sideMenuBtn").show();
+  });
+
+  if ($('#fullCalendar').length) {
+
+    jQuery.getScript("/myMvc/public/js/fullcalendar-2.6.0/lib/moment.min.js", function() {
+      jQuery.getScript("/myMvc/public/js/fullcalendar-2.6.0/fullcalendar.min.js", function() {
+        //css 
+        var myStylesLocation = "/myMvc/public/js/fullcalendar-2.6.0/fullcalendar.min.css";
+        $.get(myStylesLocation, function(css) {
+          $('<style type="text/css"></style>')
+            .html(css)
+            .appendTo("head");
+        });
+
+        $('#fullCalendar').fullCalendar({
+          events: '/myMvc/public/ctrlPublic/getDataForAjax/calendar/loadEventsForCalendar',
+          eventDataTransform: function(rawEventData) {
+            return {
+              id: rawEventData.id,
+              title: rawEventData.title,
+              start: rawEventData.start,
+              end: rawEventData.end,
+              url: rawEventData.url
+            };
+          }
+        });
+      });
+    });
+
+
+
+
+
+
+
+
+  }
+
 });

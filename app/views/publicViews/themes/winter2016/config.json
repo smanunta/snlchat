@@ -1,0 +1,36 @@
+{
+  "THEME":{
+    "name": "winter2016",
+    "description" : "this JSON file includes the description for loading the contents for this THEME",
+    "created_by": "Jose Sebastian Manunta",
+    "creation_day": "2-5-16"
+  }, 
+  "INDEX_STRUCTURE": 
+    [
+    {
+      "file": "publicViews/themes/winter2016/header",
+      "model_needed": "pubModels/PubFeatured"
+    },
+      {
+      "file" : "publicViews/themes/winter2016/index",
+      "model_needed": "pubModels/PubFeatured"
+      },
+    {
+       "file": "publicViews/themes/winter2016/footer",
+      "model_needed": "pubModels/PubFeatured"
+      }
+    
+   
+  ],
+  "PAGES_STRUCTURE": {
+    
+    "header_file": "header",
+    "mod1" : "viewModules/featured",
+    "mod2" : "viewModules/featuredArticles",
+    
+    "footer_file": "footer"
+  },
+  "MODELS_NEEDED":{
+    "pubModels" : "PubFeatured"
+  }
+}
