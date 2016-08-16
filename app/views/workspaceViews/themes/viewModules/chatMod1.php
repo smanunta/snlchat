@@ -6,7 +6,7 @@
 //echo $postData->latestPost->results(0)->ID;
 ?>
 
-	<div id="chatView" class="col-md-6">
+	<div id="chatView" class="col-md-12">
 		<div class="row">
 			<!-- this will be handled by php code through the control panel-->
 			<h1 class="ChatHeading">Featured Chat</h1>

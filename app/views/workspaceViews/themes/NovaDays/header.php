@@ -30,7 +30,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        SNLChatApp
                     </a>
                 </li>
                 
@@ -51,8 +51,8 @@
                 
                 <ul class="nav nav-stacked">
 			<li><a><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><h1 class="sideMenuTitle">Tools</h1></a></li>
-			<li class='menuOption'><a href="#" class="helperLink" data-toggle="modal" data-target="#myModal" id="createChatRoom">Create Chat Room</a></li>
-			<li class='menuOption'><a href="#" class="helperLink" data-toggle="modal" data-target="#enterChatRoomModal">Enter a Room</a></li>
+			<li class='menuOption'><a href="#" data-toggle="modal" data-target="#myModal" id="createChatRoom">Create Chat Room</a></li>
+			<li class='menuOption'><a href="#" data-toggle="modal" data-target="#enterChatRoomModal">Enter a Room</a></li>
 		</ul>
                 
             </ul>
