@@ -30,7 +30,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #222;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -65,13 +65,14 @@
 
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 40px;
+    line-height: 0px;
+
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #fff;
 }
 
 .sidebar-nav li a:hover {
@@ -92,7 +93,9 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  color: #fff;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -128,7 +131,32 @@
     }
 }
 
-.sideMenuTitle{
-    font-size: 16px;
+/*.sideMenuTitle{
+
     display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em !important;
+    color: #fff;
+}*/
+#sidebar-wrapper h2
+{
+  font-family: 'Raleway', sans-serif;
+    font-size: 1.7em;
+    font-weight: 600;
+    color: #ccc;
+  margin-top: 20px;
+  position: relative;
+}
+.jsmSignature{
+  color: red;
+  font-style: italic;
+}
+.menuOption
+{
+  border-top: 1px solid black;
+
+}
+.sideMenuTitle{
+      text-indent: 10px !important;
+          margin-top: 30px;
 }
