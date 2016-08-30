@@ -1,4 +1,4 @@
-<?php 
+<?php
 	class DB
 	{
 		private static $_instance = null;
@@ -7,7 +7,7 @@
 				$_error = false,
 				$_results = null,
 				$_count = 0;
-				
+
 		private function __construct()
 		{
 			try
@@ -20,8 +20,8 @@
 				die($e->getMessage());
 			}
 		}
-		
-		
+
+
 		//------------used to query data-----------------------
 		public static function getInstance()
 		{
@@ -31,8 +31,8 @@
 			}
 			return self::$_instance;
 		}
-		
-		 public function query($sql, $params= array())  
+
+		 public function query($sql, $params= array())
 		 {
 			$this->_error = false;
 			if($this->_query = $this->_pdo->prepare($sql))
@@ -47,7 +47,7 @@
 					}
 				}
 			}
-			
+
 			if($this->_query->execute())
 			{
 				$this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
@@ -56,40 +56,40 @@
 			{
 				$this->_error = true;
 			}
-			
+
 			return $this;
 		 }
-		
+
 		 public function action($action,$table, $where = array())
 		 {
 			if(count($where) == 3)
 			{
 				$operators = array('=','<','>','>=','<=');
-				
+
 				$field = $where[0];
 				$operator = $where[1];
-				$val = $where[2]; 
-				
+				$val = $where[2];
+
 				if(in_array($operator, $operators))
 				{
 					$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-					
+
 					if(!$this->query($sql,array($val))->error())
 					{
 						return $this;
 					}
 				}
-				
+
 			}
-			
+
 			return false;
 		 }
-		 
+
 		 public function get($table, $where)
 		 {
 			 return $this->action('SELECT *', $table, $where);
 		 }
-		 
+
 		 public function insert($table, $data= array())
 		 {
 			if(count($data))
@@ -108,7 +108,7 @@
 					$x++;
 				}
 				$sql = "INSERT INTO {$table} (`".implode('`,`', $keys)."`) VALUES ({$values})";
-				//echo $sql;
+				echo $sql;
                 //var_dump($data);
 				if(!$this->query($sql, $data)->error())
 				{
@@ -118,12 +118,12 @@
 			}
 			return false;
 		 }
-		 
+
 		 public function update($table, $where = array(), $fields = array())
 		 {
 			 $set ='';
 			 $x = 1;
-			 
+
 			 foreach($fields as $name => $value)
 			 {
 				 $set .= "{$name} = ?";
@@ -137,23 +137,23 @@
 			 {
 				 $where_values = $value . " = " . $equals;
 			 }
-			 
+
 			 $sql = "UPDATE {$table} SET {$set} WHERE {$where_values}";
 			 //echo $sql;
 			 if(!$this->query($sql, $fields)->error())
 			 {
 				 return true;
 			 }
-			 
+
 			 return false;
 		 }
-		 
-		 
+
+
 		 public function delete($table, $where)
 		 {
 			 return $this->action('DELETE', $table, $where);
 		 }
-		 
+
 		 public function results($ind= "")
 		 {
 			 if($ind != "" || $ind == 0 && is_numeric($ind))
@@ -162,23 +162,25 @@
 			 }else{
 				 return $this->_results;
 			 }
-			
+
 		 }
-		 
+
 		 public function first()
 		 {
 			return $this->_results[0];
 		 }
-		 
+
 		 public function error()
 		 {
 			 return $this->_error;
 		 }
-		 
+
 		 public function count()
 		 {
 			return $this->_count;
 		 }
-		 
+
+		
+
 	}
 ?>

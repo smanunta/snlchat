@@ -53,7 +53,7 @@ var createChatEnviornment = {
     //console.log(this.chatId + this.chatName);
 
 
-    //DUMMY DATA 
+    //DUMMY DATA
     if (wsData.open_chat === "no currently Opened chats") {
       //console.log("yes");
       wsData.open_chat = [{
@@ -85,7 +85,7 @@ var createChatEnviornment = {
     }
   },
 
-  //load the container for the chat and apply necessary classes to it 
+  //load the container for the chat and apply necessary classes to it
   //load the BG here
   loadTheContainer: function()
   {
@@ -118,6 +118,7 @@ var createChatEnviornment = {
     $(".wgtWrapper").load("/snlchat/app/views/workspaceViews/themes/viewModules/chatMod1.php", function() {
       console.log("the chat view has finished loading");
 
+      $(".ChatHeading").html($this[0].chatData.chat_name);
       $("#main_content #sendChatLine").click(function() {
         $this[0].sendChatLine();
         console.log("sendchatlinebtn was pressed");
@@ -173,13 +174,13 @@ var createChatEnviornment = {
              $linePrep = $linePrep + "<div class='time'>" + $line.timestamp + "</div>";
              $linePrep = $linePrep + "</div>";
            }
-          
+
 
           //console.log($this[0].lastChatContact);
           $this[0].lastChatContactId = $line.msg_id;
 
           $("#chatText").append($linePrep);
-          
+
           $(function() {
             var chatBox = $('#chatText');
             var height = chatBox[0].scrollHeight;
@@ -269,6 +270,7 @@ var createChatEnviornment = {
   },
 
   enterNewChatRoom: function() {
+    console.log("enterNewChatRoom is running. chatid : " + this.chatId);
 
     var formData = {
       'chatId': this.chatId,
@@ -282,8 +284,9 @@ var createChatEnviornment = {
       chatName: this.chatName,
       success: function(data) {
         //location.reload();
-          var appendToMenu = "<li class='menuOption'><a data-chat-id='" + this.chatId + "' data-chat-name='" + this.chatName + "' class='sideNavLink'>" + this.chatName + "</a></li>";
-          $("#sideMenu #activeChats").append(appendToMenu);
+        console.log(data);
+          var appendToMenu = "<li class='menuOption'><a data-chat-id='" + this.chatId + "' data-chat-name='" + this.chatName + "' class='sideNavLink'><i class='fa fa-plus-square-o' aria-hidden='true'></i> " + this.chatName + "</a></li>";
+          $("#activeChats").append(appendToMenu);
 
           //also add entry in wsData.open_chats
           $.ajax({
@@ -306,7 +309,7 @@ var createChatEnviornment = {
       }
     });
   }
-  
+
 }//createChatEnviornment object end
 
 
