@@ -1,3 +1,22 @@
+/************************************************
+**this function loads all necessary data for workspace
+**************************************************/
+function loadWorkspaceJSONData()
+{
+    $.ajax({
+         type: "GET",
+         url: '../CrtlWorkspace/dataInJsonFormatForJs/',
+         success: function(data)
+         {
+             //loadWorkspaceJSONData(data); // show response from the php script.
+             wsData =JSON.parse(data);
+             console.log(wsData);
+         }
+       });
+}
+
+loadWorkspaceJSONData();
+
 var createChatEnviornment = {
   chatId: "",
   chatName: "",
@@ -49,8 +68,10 @@ var createChatEnviornment = {
 
   //check to see if the chat id and chat name exist in the open chats
   checkIfChatExist: function() {
-    //console.log("checkIfChatExist running");
-    //console.log(this.chatId + this.chatName);
+      this.chatData = [];
+
+    console.log("checkIfChatExist running");
+    console.log(this.chatId + this.chatName);
 
 
     //DUMMY DATA
@@ -70,14 +91,20 @@ var createChatEnviornment = {
 
     }
 
+    //ITERATE THROUGH THE OPEN_CHATS ARRAY TO LOOK FOR THE CHAT BEING ASKED FOR
     wsData.open_chat.forEach(function(openChatData) {
-      if (this.chatId == openChatData.chat_id && this.chatName == openChatData.chat_name) {
-        this.chatData = openChatData;
-      } else {
 
-      }
+        if (this.chatId == openChatData.chat_id && this.chatName == openChatData.chat_name) {
+          this.chatData = openChatData;
+          console.log(this.chatData);
+        }
+        else {
+
+        }
     }, this);
-    if (this.chatData !== "") {
+
+    //checks to see if the this.chatData array has been refilled by new chat data ....ref line 52
+    if (this.chatData.chat_id === this.chatId && this.chatData.chat_name === this.chatName) {
       console.log(this.chatData);
       return true;
     } else {
@@ -158,7 +185,7 @@ var createChatEnviornment = {
         console.log($chatLines);
         //foreach line print and append to #chatText
         $chatLines.forEach(function($line) {
-            console.log($line.msg_id);
+            //console.log($line.msg_id);
           if($line.user_id == wsData.userData.user_id)
             {
              console.log("usrnames match");
@@ -288,15 +315,8 @@ var createChatEnviornment = {
           var appendToMenu = "<li class='menuOption'><a data-chat-id='" + this.chatId + "' data-chat-name='" + this.chatName + "' class='sideNavLink'><i class='fa fa-plus-square-o' aria-hidden='true'></i> " + this.chatName + "</a></li>";
           $("#activeChats").append(appendToMenu);
 
-          //also add entry in wsData.open_chats
-          $.ajax({
-             type: "GET",
-             url: '../CrtlWorkspace/dataInJsonFormatForJs/',
-             success: function(data)
-             {
-                 loadWorkspaceJSONData(data); // show response from the php script.
-             }
-           });
+          //Reload Wsdata
+          loadWorkspaceJSONData();
 
           //add the new onclick functionaloty to the new object
           $(".sideNavLink").click(function() {
@@ -332,10 +352,12 @@ var createChatRoom = {
       success: function(data) {
         //alert(data); // show response from the php script.
         if (data) {
-          $('#myModal .modal-body').append("your room has been created!!");
+          $('#myModal .modal-body').append("your room has been created!! refresh the page before entering the room");
         } else {
           $('#myModal .modal-body').append("There was a problem creating your room");
         }
+
+        loadWorkspaceJSONData();
 
       }
     });

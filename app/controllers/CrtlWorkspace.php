@@ -246,7 +246,7 @@ if ($error = json_last_error_msg()) {
 			$rightNow = date("Y-m-d H:i:sa");
 			//echo"post set test";
 
-			$data['created'] = $rightNow;
+			//$data['created'] = $rightNow;
 			$data['bgimg'] = $_POST['newChatBgimg'];
 			$data['chat_name'] = $_POST['newChatRoomName'];
 			$data['creator_user_id'] = $this->user->data()->user_id;

@@ -1,11 +1,19 @@
+/*****************************************************************
+***this is used for the controlPanel
+*****************************************************************/
 window.addEventListener('load', function() {
-  wgtOpenedData = JSON.parse(wgtFuncs.wgtGetOpenedWgts()); // turns JSON data from php into javascript parsed JSON.. this includes the data for all the widgets 
-  
+  wgtOpenedData = JSON.parse(wgtFuncs.wgtGetOpenedWgts()); // turns JSON data from php into javascript parsed JSON.. this includes the data for all the widgets
+
   console.log(wgtOpenedData); // the user has open at the beginnning of the program
-  
-  wgtOpenedData.forEach(function(wgtData) // Here we run a foreach function to gto through every widget that is opened and we run the function
-    { // wgtRunModelNView which runs AJAX to run the MODEL and VIEW for the wgt.. then we append the content to the container
-      //grabs each JSON obj which includes the users opened widgets onload
+
+/**********************************************************************
+** Here we run a foreach function to gto through every widget that is opened and we run the function
+** wgtRunModelNView which runs AJAX to run the MODEL and VIEW for the wgt.. then we append the content to the container
+** grabs each JSON obj which includes the users opened widgets onload
+***********************************************************************/
+  wgtOpenedData.forEach(function(wgtData)
+    {
+
       htmlOutput = wgtFuncs.wgtRunModelNView(wgtData.name);
 
       wgtFuncs.wgtLookNFunc(wgtData);
